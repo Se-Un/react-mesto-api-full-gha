@@ -1,0 +1,31 @@
+{
+  "name": "express-mesto-gha",
+  "version": "1.0.0",
+  "description": "*В проекте реализовано:*\r 1. Запуск сервера на Node.js и Express\r 2. Реализация контроллеров, модулей и роутов\r 3. Подключение к базе данных\r 4. Реализация запросов к базе данных\r 5. Обработка ошибок\r ### Технологии\r 1. Node.js\r 2. Express\r 3. MongoDB\r 4. Postman\r *Описание*\r Практическая работа для закрепления знаний по изучению основ бэкэнд-разработки\r [Ссылка на проект](https://github.com/Se-Un/express-mesto-gha)\r ## Директории\r `/routes` — папка с файлами роутера  \r `/controllers` — папка с файлами контроллеров пользователя и карточки   \r `/models` — папка с файлами описания схем пользователя и карточки  \r ## Запуск проекта\r `npm run start` — запускает сервер   \r `npm run dev` — запускает сервер с hot-reload",
+  "main": "app.js",
+  "scripts": {
+    "lint": "npx eslint .",
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "author": "Kim Se-Un",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^8.49.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.28.1",
+    "nodemon": "^3.0.1"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.2",
+    "celebrate": "^15.0.1",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "express-winston": "^4.2.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^7.5.2",
+    "validator": "^13.11.0",
+    "winston": "^3.11.0"
+  }
+}
