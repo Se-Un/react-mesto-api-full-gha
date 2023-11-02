@@ -107,9 +107,18 @@ const login = (req, res, next) => {
   return User.findUserByCredentials(email, password)
     .then((user) => {
       const token = jwt.sign({ _id: user._id }, KEY_SECRET, { expiresIn: '7d' });
-      res.send({ token });
+      res.cookie('jwt', token, {
+        maxAge: 3600 * 24 * 7,
+        httpOnly: true,
+        sameSite: true,
+      });
+      res.send(user);
     })
     .catch(next);
+};
+
+const logout = (req, res) => {
+  res.clearCookie('jwt').send({ message: 'Выход пользователя' });
 };
 
 const getCurrentUser = (req, res, next) => {
@@ -130,5 +139,6 @@ module.exports = {
   updateUser,
   updateAvatar,
   login,
+  logout,
   getCurrentUser,
 };

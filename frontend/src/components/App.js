@@ -171,9 +171,9 @@ function App() {
   function handleLogin(email, password) {
     auth.login(email, password)
     .then((res) => {
+      localStorage.setItem('jwt', 'true')
       setUserEmail(email);
       setLoggedIn(true);
-      localStorage.setItem("jwt", res.token);
       navigate("/", {replace: true})
     })
     .catch((err) => {
@@ -184,10 +184,15 @@ function App() {
   }
 
   function signOut() {
-    localStorage.removeItem("jwt");
-    setLoggedIn(false);
-    setUserEmail("");
-    navigate("sign-in", {replace: true});
+    auth.logout()
+    .then(() => {
+      localStorage.removeItem('jwt')
+      setLoggedIn(false);
+      setUserEmail("");
+      navigate("sign-in", {replace: true});
+    })
+    .catch((err) => console.log(err));
+    
   }
   
   // вернуть JSX код с разметкой

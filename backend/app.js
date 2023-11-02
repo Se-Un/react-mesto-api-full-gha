@@ -3,6 +3,7 @@ require('dotenv').config();
 // eslint-disable-next-line import/no-extraneous-dependencies
 const express = require('express');
 const mongoose = require('mongoose');
+const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const { errors } = require('celebrate');
 const { PORT, MONGO_PATH } = require('./utils/constants');
@@ -15,6 +16,7 @@ const cors = require('./middlewares/cors');
 const app = express();
 
 app.use(bodyParser.json());
+app.use(cookieParser());
 
 mongoose.connect(MONGO_PATH);
 

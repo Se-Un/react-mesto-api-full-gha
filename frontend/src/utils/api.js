@@ -3,6 +3,8 @@ class Api {
   //создать конструктор класса
   constructor(options) {
     this._baseUrl = options.baseUrl;
+    this.headers = options.headers;
+    this.credentials = options.credentials;
   }
   // создать метод для возвращения json
   #getResponseData(res) {
@@ -13,38 +15,29 @@ class Api {
   }
   // создать метод профиля класса
   getUserInfo() {
-    const token = localStorage.getItem('jwt');
     // исполнить запрос
     return fetch(`${this._baseUrl}/users/me`, {
       method: 'GET',
-      headers: {
-        "Content-Type": "application/json",
-        authorization: `Bearer ${token}`,
-      }
+      credentials: this.credentials,
+      headers: this.headers,
     })
     .then(this.#getResponseData);
   }
   // метод добавления первоначальных карточек
   getInitialCards() {
-    const token = localStorage.getItem('jwt');
     return fetch(`${this._baseUrl}/cards`, {
       method: 'GET',
-      headers: {
-        "Content-Type": "application/json",
-        authorization: `Bearer ${token}`,
-      }
+      credentials: this.credentials,
+      headers: this.headers,
     })
     .then(this.#getResponseData);
   }
   // метод добавления информации о пользователе на сервер
   patchDataUser(data) {
-    const token = localStorage.getItem('jwt');
     return fetch(`${this._baseUrl}/users/me`, {
       method: 'PATCH',
-      headers: {
-        "Content-Type": "application/json",
-        authorization: `Bearer ${token}`,
-      },
+      credentials: this.credentials,
+      headers: this.headers,
       body: JSON.stringify({
         name: data.name,
         about: data.about,
@@ -53,58 +46,43 @@ class Api {
   }
   // создать метод создания карты на сервере
   postDataCards(data) {
-    const token = localStorage.getItem('jwt');
     return fetch(`${this._baseUrl}/cards`, {
       method: 'POST',
-      headers: {
-        "Content-Type": "application/json",
-        authorization: `Bearer ${token}`,
-      },
+      credentials: this.credentials,
+      headers: this.headers,
       body: JSON.stringify(data),
     }).then(this.#getResponseData);
   }
   // создать метод удаления карты на сервере
   deleteCard(id) {
-    const token = localStorage.getItem('jwt');
     return fetch(`${this._baseUrl}/cards/${id}`, {
         method: "DELETE",
-        headers: {
-          "Content-Type": "application/json",
-          authorization: `Bearer ${token}`,
-        },
+        credentials: this.credentials,
+        headers: this.headers,
     }).then(this.#getResponseData);
   }
   // создать метод лайка карточки
   likeState(id) {
-    const token = localStorage.getItem('jwt');
     return fetch(`${this._baseUrl}/cards/${id}/likes`, {
         method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-          authorization: `Bearer ${token}`,
-        },
+        credentials: this.credentials,
+        headers: this.headers,
     }).then(this.#getResponseData);
   }
   // создать метод дизлайка карточки
   dislikeState(id) {
-    const token = localStorage.getItem('jwt');
     return fetch(`${this._baseUrl}/cards/${id}/likes`, {
         method: "DELETE",
-        headers: {
-          "Content-Type": "application/json",
-          authorization: `Bearer ${token}`,
-        },
+        credentials: this.credentials,
+        headers: this.headers,
     }).then(this.#getResponseData);
   }
   // создать метод изменения аватара
   changeAvatar(data) {
-    const token = localStorage.getItem('jwt');
     return fetch(`${this._baseUrl}/users/me/avatar`, {
         method: "PATCH",
-        headers: {
-          "Content-Type": "application/json",
-          authorization: `Bearer ${token}`,
-        },
+        credentials: this.credentials,
+        headers: this.headers,
         body: JSON.stringify(data),
     }).then(this.#getResponseData);
   }
@@ -117,6 +95,10 @@ const api = new Api({
       //"Content-Type": "application/json",
   //}
   baseUrl: "http://localhost:3000",
+  headers: {
+    "Content-Type": "application/json", 
+  },
+  credentials: "include",
 });
 
 export default api;
