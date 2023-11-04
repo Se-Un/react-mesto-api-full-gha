@@ -1,6 +1,7 @@
 // URL адрес
 //export const BASE_URL = 'https://auth.nomoreparties.co';
-export const BASE_URL = 'http://localhost:3000';
+//export const BASE_URL = 'http://localhost:3000';
+export const BASE_URL = 'http://api.mestoks.nomoredomainsmonster.ru';
 // функция для проверки передачи данных с сервера
 export function checkRes(res) {
   return res.ok ? res.json() : Promise.reject(`Ошибка ${res.status}`);
