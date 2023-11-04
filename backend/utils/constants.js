@@ -7,7 +7,7 @@ const ALLOWED_CORS = [
 ];
 
 const DEFAULT_ALLOWED_METHODS = 'GET,HEAD,PUT,PATCH,POST,DELETE';
-const KEY_SECRET = process.env.NODE_ENV === 'production' ? process.env.JWT_SECRET : 'key';
+const KEY_SECRET = process.env.NODE_ENV === 'production' ? process.env.JWT_SECRET : 'key-secret';
 
 module.exports = {
   PORT,
