@@ -94,8 +94,8 @@ const api = new Api({
       //authorization: "e7ba1a9e-f2b7-42f1-b3b7-db01471a0a76",
       //"Content-Type": "application/json",
   //}
-  //baseUrl: "http://localhost:3000",
-  baseUrl: "http://api.mestoks.nomoredomainsmonster.ru",
+  baseUrl: "http://localhost:3000",
+  //baseUrl: "http://api.mestoks.nomoredomainsmonster.ru",
   headers: {
     "Content-Type": "application/json", 
   },

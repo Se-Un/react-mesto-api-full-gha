@@ -104,15 +104,19 @@ const updateAvatar = (req, res, next) => {
 
 const login = (req, res, next) => {
   const { email, password } = req.body;
-  return User.findUserByCredentials(email, password)
+  User.findUserByCredentials(email, password)
     .then((user) => {
-      const token = jwt.sign({ _id: user._id }, KEY_SECRET, { expiresIn: '7d' });
+      const token = jwt.sign(
+        { _id: user._id },
+        KEY_SECRET,
+        { expiresIn: '7d' },
+      );
       res.cookie('jwt', token, {
-        maxAge: 3600 * 24 * 7,
+        maxAge: 3600000 * 24 * 7,
         httpOnly: true,
         sameSite: true,
-      });
-      res.send(user);
+      })
+        .send({ message: 'Вы успешно авторизовались' });
     })
     .catch(next);
 };
