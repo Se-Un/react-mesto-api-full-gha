@@ -8,7 +8,7 @@ const {
 const ALLOWED_CORS = [
   'http://localhost:3000',
   'http://localhost:3001',
-  'http://mestoks.nomoredomainsmonster.ru',
+  'https://mestoks.nomoredomainsmonster.ru',
 ];
 
 const DEFAULT_ALLOWED_METHODS = 'GET,HEAD,PUT,PATCH,POST,DELETE';
