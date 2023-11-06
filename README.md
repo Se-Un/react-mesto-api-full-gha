@@ -44,11 +44,15 @@
 9. Postman
 
 ## Ссылки на проект
-* Адрес репозитория [https://github.com/Se-Un/react-mesto-api-full-gha](https://github.com/Se-Un/react-mesto-api-full-gha)
-* IP 158.160.17.152
-* Frontend [https://mestoks.nomoredomainsmonster.ru](https://mestoks.nomoredomainsmonster.ru)
-* Backend [https://api.mestoks.nomoredomainsmonster.ru](https://api.mestoks.nomoredomainsmonster.ru)
+
+IP 158.160.17.152
+
+Frontend [https://mestoks.nomoredomainsmonster.ru/](https://mestoks.nomoredomainsmonster.ru/)
+
+Backend [https://api.mestoks.nomoredomainsmonster.ru/](https://api.mestoks.nomoredomainsmonster.ru/)
 
 ## Итоги реализации проекта:
 В данном проекте проведена работа по основам backend - создание сервера, подключение сервера к базе данных, настройка API, деплой проекта на удаленный сервер, подключение frontend к backend.
 Данный проект помог в закреплении и применении на практике полученных знаний, по Node.js, MongoDB, Postman, JS, React, DevTools
+
+Адрес репозитория [https://github.com/Se-Un/react-mesto-api-full-gha](https://github.com/Se-Un/react-mesto-api-full-gha)
