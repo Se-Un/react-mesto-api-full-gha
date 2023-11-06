@@ -1,6 +1,9 @@
-const PORT = process.env.PORT || 3000;
-const MONGO_PATH = process.env.MONGO_PATH || 'mongodb://127.0.0.1:27017/mestodb';
-const NODE_ENV = process.env.NODE_ENV || 'production';
+const {
+  PORT = 3000,
+  MONGO_PATH = 'mongodb://127.0.0.1:27017/mestodb',
+  JWT_SECRET = 'efc8864c9722cc9f02b5e91c1b0dd98fb82907fcc23c16b7f2e6ef815f2cccf3',
+  NODE_ENV,
+} = process.env;
 
 const ALLOWED_CORS = [
   'http://localhost:3000',
@@ -9,7 +12,6 @@ const ALLOWED_CORS = [
 ];
 
 const DEFAULT_ALLOWED_METHODS = 'GET,HEAD,PUT,PATCH,POST,DELETE';
-const KEY_SECRET = NODE_ENV === 'production' ? process.env.JWT_SECRET : 'key-secret';
 
 module.exports = {
   PORT,
@@ -17,5 +19,5 @@ module.exports = {
   NODE_ENV,
   ALLOWED_CORS,
   DEFAULT_ALLOWED_METHODS,
-  KEY_SECRET,
+  JWT_SECRET,
 };

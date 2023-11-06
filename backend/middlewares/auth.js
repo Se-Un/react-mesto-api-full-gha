@@ -1,6 +1,6 @@
 const jwt = require('jsonwebtoken');
 const AuthError = require('../errors/AuthError');
-const { KEY_SECRET } = require('../utils/constants');
+const { JWT_SECRET } = require('../utils/constants');
 
 // eslint-disable-next-line consistent-return
 module.exports = (req, res, next) => {
@@ -11,7 +11,7 @@ module.exports = (req, res, next) => {
     if (!token) {
       return next(new AuthError('Ошибка с идентификацией токена'));
     }
-    payload = jwt.verify(token, KEY_SECRET);
+    payload = jwt.verify(token, JWT_SECRET);
   } catch (err) {
     return next(new AuthError('Необходимо авторизоваться'));
   }

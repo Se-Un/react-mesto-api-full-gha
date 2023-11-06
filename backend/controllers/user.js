@@ -4,7 +4,7 @@ const User = require('../models/user');
 const NotFound = require('../errors/NotFound');
 const BadRequest = require('../errors/BadRequest');
 const CurrentUserError = require('../errors/CurrentUserError');
-const { KEY_SECRET } = require('../utils/constants');
+const { JWT_SECRET } = require('../utils/constants');
 
 const getUsers = (req, res, next) => {
   User.find({})
@@ -108,7 +108,7 @@ const login = (req, res, next) => {
     .then((user) => {
       const token = jwt.sign(
         { _id: user._id },
-        KEY_SECRET,
+        JWT_SECRET,
         { expiresIn: '7d' },
       );
       res.cookie('jwt', token, {
