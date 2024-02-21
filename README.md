@@ -5,7 +5,7 @@
 * Описание
 * В проекте реализовано
 * Используемые технологии
-* Ссылки на проект
+* Скриншоты
 * Итоги реализации проекта
 
 ## Описание 
@@ -44,16 +44,13 @@
 8. MongoDB
 9. Postman
 
-## Ссылки на проект
-
-IP 158.160.17.152
-
-Frontend [https://mestoks.nomoredomainsmonster.ru/](https://mestoks.nomoredomainsmonster.ru/)
-
-Backend [https://api.mestoks.nomoredomainsmonster.ru/](https://api.mestoks.nomoredomainsmonster.ru/)
+## Скриншоты
+![alt text](image.png)
+![alt text](image-1.png)
+![alt text](image-2.png)
+![alt text](image-3.png)
+![alt text](image-4.png)
 
 ## Итоги реализации проекта:
 В данном проекте проведена работа по основам backend - создание сервера, подключение сервера к базе данных, настройка API, деплой проекта на удаленный сервер, подключение frontend к backend.
 Данный проект помог в закреплении и применении на практике полученных знаний, по Node.js, MongoDB, Postman, JS, React, DevTools
-
-Адрес репозитория [https://github.com/Se-Un/react-mesto-api-full-gha](https://github.com/Se-Un/react-mesto-api-full-gha)

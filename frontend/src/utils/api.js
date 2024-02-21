@@ -1,19 +1,19 @@
-// создать класс
+// класс
 class Api {
-  //создать конструктор класса
+  // конструктор класса
   constructor(options) {
     this._baseUrl = options.baseUrl;
     this.headers = options.headers;
     this.credentials = options.credentials;
   }
-  // создать метод для возвращения json
+  // метод для возвращения json
   #getResponseData(res) {
     if(res.ok) {
       return res.json();
     }
     return Promise.reject(`Что-то пошло не так ${res.status}`);
   }
-  // создать метод профиля класса
+  // метод профиля класса
   getUserInfo() {
     // исполнить запрос
     return fetch(`${this._baseUrl}/users/me`, {
@@ -94,8 +94,8 @@ const api = new Api({
       //authorization: "e7ba1a9e-f2b7-42f1-b3b7-db01471a0a76",
       //"Content-Type": "application/json",
   //}
-  //baseUrl: "http://localhost:3000",
-  baseUrl: "https://api.mestoks.nomoredomainsmonster.ru",
+  baseUrl: "http://localhost:3000",
+  //baseUrl: "https://api.mestoks.nomoredomainsmonster.ru",
   headers: {
     "Content-Type": "application/json", 
   },
